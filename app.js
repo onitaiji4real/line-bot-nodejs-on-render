@@ -29,6 +29,6 @@ bot.on("message", function (event) {
 });
 
 //bot 所監聽的webhook路徑與port
-bot.listen("https://line-bot-od6j.onrender.com", 3000, function () {
+bot.listen("https://line-bot-od6j.onrender.com/callback", 3000, function () {
   console.log("[廢物小幫手已準備就緒！2]");
 });
