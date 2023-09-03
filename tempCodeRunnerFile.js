@@ -1,0 +1,1 @@
+await page.click('a:contains("更多新聞稿")');

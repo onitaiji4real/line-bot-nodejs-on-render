@@ -1,3 +1,5 @@
+const getOilCaptions = require("./oilParser.js"); //引用中油爬蟲js
+
 //引用linebot SDK
 var linebot = require("linebot");
 
@@ -14,7 +16,14 @@ bot.on("message", function (event) {
   //event.message.text 是使用者傳給bot的訊息
   //使用event.reply(要回傳的訊息)方法可將訊息回傳給使用者
 
-  var replyMsg = `Hello 你剛剛說的是:${event.message.text}`;
+  if (message === "你好") {
+    async () => {
+      const news = await getOilCaptions();
+      var replyMsg = `Hello 你剛剛說的是:${news}`;
+    };
+  }
+
+  // var replyMsg = `Hello 你剛剛說的是:${event.message.text}`;
 
   // 透過event.reply(要回傳的訊息)方法將訊息回傳給使用者
 
