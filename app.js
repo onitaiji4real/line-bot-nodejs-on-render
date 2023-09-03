@@ -33,6 +33,6 @@ bot.listen(
   "https://linebottest2.onrender.com/callback",
 
   function () {
-    console.log("[廢物小幫手已準備就緒！]");
+    console.log("[廢物小幫手已準備就緒！2]");
   }
 );
