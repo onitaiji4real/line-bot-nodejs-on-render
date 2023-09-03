@@ -29,6 +29,10 @@ bot.on("message", function (event) {
 });
 
 //bot 所監聽的webhook路徑與port
-bot.listen("https://line-bot-nodejs-echo-0jvd.onrender.com", function () {
-  console.log("[廢物小幫手已準備就緒！]");
-});
+bot.listen(
+  "https://line-bot-nodejs-echo-0jvd.onrender.com",
+  10000,
+  function () {
+    console.log("[廢物小幫手已準備就緒！]");
+  }
+);
