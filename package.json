@@ -4,5 +4,8 @@
     "puppeteer": "^21.1.1",
     "puppeteer-core": "^21.1.1",
     "selenium-webdriver": "^4.12.0"
+  },
+  "engines": {
+    "node": ">16"
   }
 }
