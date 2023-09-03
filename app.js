@@ -1,4 +1,4 @@
-const getOilCaptions = require("./oilParser.js"); //引用中油爬蟲js
+// const getOilCaptions = require("./oilParser.js"); //引用中油爬蟲js
 
 //引用linebot SDK
 var linebot = require("linebot");
@@ -16,14 +16,7 @@ bot.on("message", function (event) {
   //event.message.text 是使用者傳給bot的訊息
   //使用event.reply(要回傳的訊息)方法可將訊息回傳給使用者
 
-  if (event.message.text === "你好") {
-    async () => {
-      const news = await getOilCaptions();
-      var replyMsg = `Hello 你剛剛說的是:${news}`;
-    };
-  }
-
-  // var replyMsg = `Hello 你剛剛說的是:${event.message.text}`;
+  var replyMsg = `Hello 你剛剛說的是:${event.message.text}`;
 
   // 透過event.reply(要回傳的訊息)方法將訊息回傳給使用者
 
@@ -39,5 +32,5 @@ bot.on("message", function (event) {
 
 //bot 所監聽的webhook路徑與port
 bot.listen("/callback", 3000, function () {
-  console.log("[廢物小幫手已準備就緒！2]");
+  console.log("[廢物小幫手已準備就緒！]");
 });
