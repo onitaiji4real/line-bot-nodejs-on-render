@@ -16,7 +16,7 @@ bot.on("message", function (event) {
   //event.message.text 是使用者傳給bot的訊息
   //使用event.reply(要回傳的訊息)方法可將訊息回傳給使用者
 
-  var replyMsg = `Hello 你剛剛說的是:${event.message.text}`;
+  var replyMsg = `${event.message.text}`;
 
   // 透過event.reply(要回傳的訊息)方法將訊息回傳給使用者
 
