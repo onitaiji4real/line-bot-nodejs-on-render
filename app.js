@@ -1,5 +1,6 @@
 // const getOilCaptions = require("./oilParser.js"); //引用中油爬蟲js
-const runOilParser = require("./oilParser");
+
+const getOil = require("./oilNew");
 //引用linebot SDK
 var linebot = require("linebot");
 
@@ -18,10 +19,10 @@ bot.on("message", function (event) {
   if (event.message.text === "oil") {
     (async () => {
       try {
-        const replyMsg = await runOilParser();
+        const replyMsg = await getOil();
         console.log(a); // 打印结果
       } catch (error) {
-        console.error("runOilParser 發生錯誤", error);
+        console.error("getOil 發生錯誤", error);
       }
     })();
   } else {

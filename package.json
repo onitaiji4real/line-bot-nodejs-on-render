@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "chrome": "^0.1.0",
     "linebot": "^1.6.1",
     "puppeteer": "^21.1.1",
     "puppeteer-core": "^21.1.1",

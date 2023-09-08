@@ -4,8 +4,8 @@ async function getOilCaptions() {
   // 提供Microsoft Edge的執行檔路徑
   const browser = await puppeteer.launch({
     headless: true,
-    executablePath:
-      "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe", // 確保這是正確的路徑
+    // executablePath:
+    //   "C:\\Program Files (x86)\\Microsoft\\Edge\\Application\\msedge.exe", // 確保這是正確的路徑
   });
 
   const page = await browser.newPage();
