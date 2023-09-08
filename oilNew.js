@@ -35,4 +35,4 @@ async function getOil() {
   await browser.close();
   return item;
 }
-module.exports.getOil;
+module.exports = getOil;

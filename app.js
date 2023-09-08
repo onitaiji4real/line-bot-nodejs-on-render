@@ -20,7 +20,6 @@ bot.on("message", function (event) {
     (async () => {
       try {
         const replyMsg = await getOil();
-        console.log(a); // 打印结果
       } catch (error) {
         console.error("getOil 發生錯誤", error);
       }
@@ -28,6 +27,7 @@ bot.on("message", function (event) {
   } else {
     var replyMsg = `${event.message.text}`;
   }
+  console.log(replyMsg);
 
   // 透過event.reply(要回傳的訊息)方法將訊息回傳給使用者
 
