@@ -1,5 +1,5 @@
 // const getOilCaptions = require("./oilParser.js"); //引用中油爬蟲js
-
+const runOilParser = require("./oilParser");
 //引用linebot SDK
 var linebot = require("linebot");
 
@@ -15,8 +15,18 @@ var bot = linebot({
 bot.on("message", function (event) {
   //event.message.text 是使用者傳給bot的訊息
   //使用event.reply(要回傳的訊息)方法可將訊息回傳給使用者
-
-  var replyMsg = `${event.message.text}`;
+  if (event.message.text === "oil") {
+    (async () => {
+      try {
+        const replyMsg = await runOilParser();
+        console.log(a); // 打印结果
+      } catch (error) {
+        console.error("runOilParser 發生錯誤", error);
+      }
+    })();
+  } else {
+    var replyMsg = `${event.message.text}`;
+  }
 
   // 透過event.reply(要回傳的訊息)方法將訊息回傳給使用者
 

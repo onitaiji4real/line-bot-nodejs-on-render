@@ -18,28 +18,60 @@ async function getOilCaptions() {
   const [link] = await page.$x('//a[contains(text(), "更多新聞稿")]');
   if (link) {
     await link.click();
-    console.log("已點擊");
+    //console.log("已點擊");
   }
 
   await page.waitForTimeout(5000); // 等待網頁載入完成
 
-  console.log("點擊新聞稿\n以下是新聞稿標題\n");
+  //console.log("點擊新聞稿\n以下是新聞稿標題\n");
 
   // 撈取標題
   const keyword = "平穩雙機制";
   const newsCaptions = await page.$$(".caption");
 
+  let item = [];
   let count = 0;
   for (let newsCaption of newsCaptions) {
     const text = await newsCaption.evaluate((el) => el.textContent);
     if (text.includes(keyword)) {
-      console.log(text + "\n");
+      //console.log(text + "\n");
+      item.push(text);
       count++;
       if (count === 3) break;
     }
   }
 
   await browser.close();
-  return getOilCaptions;
+  return item;
 }
-module.exports = getOilCaptions;
+
+// async function runOilParser() {
+//   try {
+//     await getOilCaptions();
+//     console.log("getOilCaptions 完成。");
+//   } catch (error) {
+//     console.log("getOilCaptions 失敗");
+//   }
+// }
+
+async function runOilParser() {
+  try {
+    const result = await getOilCaptions();
+    console.log("getOilCaptions 完成。");
+    return result; // 返回 getOilCaptions 函数的结果
+  } catch (error) {
+    console.log("getOilCaptions 失敗");
+    throw error;
+  }
+}
+
+(async () => {
+  try {
+    const a = await runOilParser();
+    console.log(a); // 打印结果
+  } catch (error) {
+    console.error("runOilParser 發生錯誤", error);
+  }
+})();
+
+module.exports = runOilParser;

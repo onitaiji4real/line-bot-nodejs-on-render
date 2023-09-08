@@ -1,3 +1,5 @@
-import getOilCaptions from "./oilParser";
+const runOilParser = require("./oilParser");
 
-getOilCaptions();
+var a = runOilParser();
+
+console.log(a);
