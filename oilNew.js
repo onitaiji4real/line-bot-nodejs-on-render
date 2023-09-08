@@ -1,6 +1,7 @@
 const puppeteer = require("puppeteer");
-
+// process.env.PUPPETEER_CHROMEDRIVER_PATH = "\node_modules\chromedriver\lib\chromedriver";
 async function getOil() {
+  process.chdir(__dirname);
   const browser = await puppeteer.launch({
     headless: "new",
     // headless: false,
